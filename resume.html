@@ -3,1112 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naresh Budhathoki - DevOps Engineer</title>
+    <title>Mayank Singh Dhami - DevOps & Cloud Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b82f6',    // Lightened from #2563eb to #3b82f6
-                        secondary: '#93c5fd',  // Lightened from #60a5fa to #93c5fd
-                        accent: '#bfdbfe',     // Lightened from #93c5fd to #bfdbfe
-                        light: '#f0f9ff',
-                        dark: '#0f172a'
+                        primary: '#2563eb',
+                        secondary: '#22d3ee',
+                        ink: '#0f172a',
+                        mist: '#f8fafc'
                     },
                     fontFamily: {
-                        sans: ['Roboto', 'sans-serif'],
-                    },
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    }
                 }
             }
         }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .progress-bar {
-            height: 8px;
-            border-radius: 4px;
-            background-color: #e2e8f0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            border-radius: 4px;
-            background-color: #93c5fd;
-            transition: width 0.5s ease-in-out;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #93c5fd;
-            z-index: 1;
-        }
-        
-        .timeline-item::after {
-            content: "";
-            position: absolute;
-            left: 5px;
-            top: 20px;
-            width: 2px;
-            height: calc(100% - 15px);
-            background-color: #e2e8f0;
-        }
-        
-        .timeline-item:last-child::after {
-            display: none;
-        }
-        
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .skill-tag {
-            transition: all 0.3s ease;
-        }
-        
-        .skill-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Enhanced responsive styles */
-        @media (max-width: 640px) {
-            .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            h1 {
-                font-size: 1.875rem !important;
-            }
-            
-            h2 {
-                font-size: 1.5rem !important;
-            }
-            
-            h3 {
-                font-size: 1.25rem !important;
-            }
-            
-            .timeline-item {
-                padding-left: 25px;
-            }
-            
-            .timeline-item::before {
-                width: 10px;
-                height: 10px;
-            }
-        }
-        
-        /* Print styles - completely revised for better PDF output */
-        @media print {
-            @page {
-                size: A4;
-                margin: 0.5cm;
-            }
-            
-            html, body {
-                width: 210mm;
-                height: 297mm;
-                font-size: 10pt;
-                line-height: 1.3;
-                background: white !important;
-                color: black !important;
-            }
-            
-            /* Hide elements not needed in print */
-            nav, footer, .no-print, #back-to-top, #contact, #mobile-menu, #menu-toggle, #download-resume, 
-            #contact-form, .contact-section, form, button {
-                display: none !important;
-            }
-            
-            /* Format containers for print */
-            .container, main, section, div {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                background: white !important;
-                box-shadow: none !important;
-                border: none !important;
-                border-radius: 0 !important;
-            }
-            
-            /* Section spacing */
-            section {
-                margin-bottom: 0.8cm !important;
-                page-break-inside: avoid;
-            }
-            
-            /* Force page breaks */
-            #skills, #projects {
-                page-break-before: always;
-            }
-            
-            /* Header styling for print */
-            header {
-                background: white !important;
-                color: black !important;
-                padding: 0 !important;
-                margin-bottom: 0.8cm !important;
-            }
-            
-            /* Typography for print */
-            h1 {
-                font-size: 16pt !important;
-                color: #3b82f6 !important;
-            }
-            
-            h2 {
-                font-size: 14pt !important;
-                color: #3b82f6 !important;
-                margin-top: 0.5cm !important;
-                margin-bottom: 0.3cm !important;
-                border-bottom: 1pt solid #3b82f6 !important;
-                padding-bottom: 0.2cm !important;
-            }
-            
-            h3 {
-                font-size: 12pt !important;
-                color: #93c5fd !important;
-            }
-            
-            /* Grid layout for print */
-            .print-grid {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr !important;
-                gap: 0.5cm !important;
-            }
-            
-            /* Progress bars for print */
-            .progress-bar {
-                border: 1pt solid #ccc !important;
-                height: 6pt !important;
-            }
-            
-            .progress-fill {
-                background-color: #93c5fd !important;
-            }
-            
-            /* Timeline for print */
-            .timeline-item::before {
-                background-color: #93c5fd !important;
-            }
-            
-            .timeline-item::after {
-                background-color: #ccc !important;
-            }
-            
-            /* Links in print */
-            a {
-                text-decoration: none !important;
-                color: black !important;
-            }
-            
-            /* Project cards in print */
-            .project-card {
-                border: 1pt solid #ccc !important;
-                padding: 0.3cm !important;
-                margin-bottom: 0.3cm !important;
-                background: white !important;
-            }
-            
-            /* Contact info in print header */
-            .print-contact-info {
-                margin-top: 0.3cm !important;
-                font-size: 9pt !important;
-            }
-            
-            /* Print header layout */
-            .print-header {
-                display: flex !important;
-                align-items: center !important;
-                justify-content: space-between !important;
-                margin-bottom: 0.5cm !important;
-            }
-            
-            /* Skill tags in print */
-            .skill-tag {
-                background: #f0f9ff !important;
-                border: 1pt solid #ccc !important;
-                color: #3b82f6 !important;
-            }
-            
-            /* Compact sections for print */
-            .print-compact {
-                margin: 0.2cm 0 !important;
-                padding: 0.2cm !important;
-            }
-        }
+        body{font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';}
+        .glass{background: rgba(255,255,255,0.7);backdrop-filter: blur(8px);} 
+        .card{transition: transform .2s ease, box-shadow .2s ease}
+        .card:hover{transform: translateY(-3px); box-shadow: 0 12px 30px -12px rgba(0,0,0,.2)}
+        @media print{nav, #cta, #contact, #back-to-top, .no-print{display:none !important}; body{color:#000} a{color:#000; text-decoration:none}}
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-primary text-white shadow-lg sticky top-0 z-50 no-print">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold">Naresh Budhathoki</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-accent transition">About</a>
-                <a href="#skills" class="hover:text-accent transition">Skills</a>
-                <a href="#experience" class="hover:text-accent transition">Experience</a>
-                <a href="#education" class="hover:text-accent transition">Education</a>
-                <a href="#projects" class="hover:text-accent transition">Projects</a>
-                <a href="#contact" class="hover:text-accent transition">Contact</a>
-            </div>
-            <div class="md:hidden">
-                <button id="menu-toggle" class="focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
+<body class="bg-mist text-ink">
+    <nav class="sticky top-0 z-50 glass border-b border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="font-semibold text-primary">Mayank Singh Dhami</a>
+            <button id="menuBtn" class="md:hidden text-ink/70" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+            <div id="menu" class="hidden md:flex items-center gap-6 text-sm">
+                <a href="#about" class="hover:text-primary">About</a>
+                <a href="#skills" class="hover:text-primary">Skills</a>
+                <a href="#projects" class="hover:text-primary">Projects</a>
+                <a href="#education" class="hover:text-primary">Education</a>
+                <a href="#experience" class="hover:text-primary">Experience</a>
+                <a href="#contact" class="hover:text-primary">Contact</a>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-primary px-4 py-2 no-print">
-            <a href="#about" class="block py-2 hover:text-accent transition">About</a>
-            <a href="#skills" class="block py-2 hover:text-accent transition">Skills</a>
-            <a href="#experience" class="block py-2 hover:text-accent transition">Experience</a>
-            <a href="#education" class="block py-2 hover:text-accent transition">Education</a>
-            <a href="#projects" class="block py-2 hover:text-accent transition">Projects</a>
-            <a href="#contact" class="block py-2 hover:text-accent transition">Contact</a>
+        <div id="mobileMenu" class="md:hidden hidden px-4 pb-3 text-sm">
+            <a href="#about" class="block py-2">About</a>
+            <a href="#skills" class="block py-2">Skills</a>
+            <a href="#projects" class="block py-2">Projects</a>
+            <a href="#education" class="block py-2">Education</a>
+            <a href="#experience" class="block py-2">Experience</a>
+            <a href="#contact" class="block py-2">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section - Lightened blue gradient -->
-    <header class="bg-gradient-to-r from-primary to-secondary text-white py-12 md:py-20 lg:py-24">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center print-header">
-            <div class="w-full text-center md:text-left">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Naresh Budhathoki</h1>
-                <h2 class="text-xl sm:text-2xl md:text-3xl font-medium mb-6">DevOps Engineer</h2>
-                <p class="text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0">Passionate about infrastructure automation, CI/CD pipelines, and cloud technologies. Ready to contribute to your team's success.</p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 no-print">
-                    <a href="#contact" class="bg-white text-primary font-medium py-2 px-6 rounded-full hover:bg-light hover:shadow-lg transition duration-300 flex items-center">
-                        <i class="fas fa-envelope mr-2"></i> Contact Me
-                    </a>
-                    <button id="download-resume" class="bg-transparent border-2 border-white text-white font-medium py-2 px-6 rounded-full hover:bg-white hover:text-primary transition duration-300 flex items-center">
-                        <i class="fas fa-download mr-2"></i> Download Resume
-                    </button>
+    <header id="about" class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-transparent"></div>
+        <div class="max-w-6xl mx-auto px-4 py-12 md:py-16 relative">
+            <div class="grid md:grid-cols-5 gap-8 items-center">
+                <div class="md:col-span-3">
+                    <h1 class="text-3xl md:text-5xl font-bold tracking-tight">Mayank Singh Dhami</h1>
+                    <p class="mt-3 text-lg text-slate-600">Cloud & DevOps Engineer • Computer Science Student</p>
+                    <p class="mt-4 text-slate-700 max-w-2xl">Results-oriented Computer Science student specializing in cloud infrastructure and automation. Proficient in Python, Java and C with experience architecting scalable systems on AWS using Terraform and Docker. Seeking to apply my knowledge of CI/CD, automation, and system design to contribute to challenging projects in fintech and related fields.</p>
+                    <div class="mt-6 flex flex-wrap gap-3 text-sm">
+                        <a href="tel:+919012176321" class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-md hover:border-primary/50"><i class="fa-solid fa-phone text-primary"></i> 9012176321</a>
+                        <a href="mailto:mayanksinghdhami7@gmail.com" class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-md hover:border-primary/50"><i class="fa-solid fa-envelope text-primary"></i> mayanksinghdhami7@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/mayanksdhami/" target="_blank" class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-md hover:border-primary/50"><i class="fa-brands fa-linkedin text-primary"></i> LinkedIn</a>
+                        <a href="https://github.com/MayankSingh04" target="_blank" class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-md hover:border-primary/50"><i class="fa-brands fa-github text-primary"></i> GitHub</a>
+                    </div>
                 </div>
-                <div class="hidden print:block print-contact-info">
-                    <div class="flex flex-wrap gap-3">
-                        <span><i class="fas fa-envelope"></i> nareshbc5555@gmail.com</span>
-                        <span><i class="fab fa-github"></i> github.com/nareshbudhathoki</span>
-                        <span><i class="fab fa-linkedin"></i> linkedin.com/in/naresh-budhathoki-a079301b3</span>
+                <div class="md:col-span-2">
+                    <div class="card rounded-2xl border border-slate-200 bg-white p-5">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 grid place-content-center rounded-xl bg-primary/10 text-primary text-2xl"><i class="fa-solid fa-cloud"></i></div>
+                            <div>
+                                <p class="text-sm text-slate-500">Location</p>
+                                <p class="font-medium">Haldwani, India</p>
+                            </div>
+                        </div>
+                        <div class="mt-5 grid grid-cols-2 gap-3 text-xs">
+                            <div class="rounded-lg bg-mist p-3">
+                                <p class="font-semibold">AWS</p>
+                                <p class="text-slate-600">EC2, S3, Lambda, API GW, VPC</p>
+                            </div>
+                            <div class="rounded-lg bg-mist p-3">
+                                <p class="font-semibold">DevOps</p>
+                                <p class="text-slate-600">Terraform, Docker, K8s, GHA</p>
+                            </div>
+                            <div class="rounded-lg bg-mist p-3">
+                                <p class="font-semibold">Languages</p>
+                                <p class="text-slate-600">Python, Java, C, SQL, Bash</p>
+                            </div>
+                            <div class="rounded-lg bg-mist p-3">
+                                <p class="font-semibold">OS</p>
+                                <p class="text-slate-600">Linux, UNIX, Windows</p>
+                            </div>
+                </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8 sm:py-10 md:py-12">
-        <!-- About Section -->
-        <section id="about" class="mb-10 sm:mb-12 md:mb-16">
-            <div class="bg-white rounded-xl shadow-md p-5 sm:p-6 md:p-8">
-                <h2 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 sm:mb-5 md:mb-6 flex items-center">
-                    <i class="fas fa-user-circle mr-3 text-secondary"></i>
-                    About Me
-                </h2>
-                <div class="bg-blue-50 border-l-4 border-secondary p-4 sm:p-5 rounded-r-lg mb-5 sm:mb-6">
-                    <p class="text-base sm:text-lg">Aspiring DevOps Engineer looking for a Junior DevOps role to apply what I've learned and grow my skills in real-world infrastructure and automation. I recently completed intensive DevOps training at TechAxis, where I worked on Linux, CI/CD pipeline, Docker containerization, terraform, vagrant, aws, and Ansible. I'm excited to join a team and learn more by working on real projects.</p>
+    <main class="max-w-6xl mx-auto px-4 py-10">
+        <section id="skills" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold">Technical Skills</h2>
+            <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-code"></i><p class="font-semibold">Languages</p></div>
+                    <p class="text-sm text-slate-700">Python, Java, C, SQL, Bash</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                    <div>
-                        <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4">Contact Information</h3>
-                        <ul class="space-y-2 sm:space-y-3">
-                            <li class="flex items-center">
-                                <i class="fas fa-envelope w-8 text-secondary"></i>
-                                <a href="mailto:nareshbc5555@gmail.com" class="hover:text-secondary transition text-sm sm:text-base">nareshbc5555@gmail.com</a>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fab fa-github w-8 text-secondary"></i>
-                                <a href="https://github.com/nareshbudhathoki" target="_blank" class="hover:text-secondary transition text-sm sm:text-base">github.com/nareshbudhathoki</a>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fab fa-linkedin w-8 text-secondary"></i>
-                                <a href="https://www.linkedin.com/in/naresh-budhathoki-a079301b3/" target="_blank" class="hover:text-secondary transition text-sm sm:text-base truncate">linkedin.com/in/naresh-budhathoki-a079301b3</a>
-                            </li>
-                        </ul>
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-cloud"></i><p class="font-semibold">Cloud & DevOps</p></div>
+                    <p class="text-sm text-slate-700">AWS (EC2, S3, Lambda, API Gateway, VPC), Terraform, Docker, Kubernetes, GitHub Actions</p>
                     </div>
-                    <div>
-                        <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4 mt-5 md:mt-0">Professional Summary</h3>
-                        <ul class="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 text-sm sm:text-base">
-                            <li>Recently completed intensive DevOps training</li>
-                            <li>Experience with Linux administration and cloud services</li>
-                            <li>Knowledge of containerization and orchestration</li>
-                            <li>Familiar with CI/CD pipelines and automation</li>
-                            <li>Background in IT support and infrastructure</li>
-                        </ul>
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-computer"></i><p class="font-semibold">Operating Systems</p></div>
+                    <p class="text-sm text-slate-700">Linux (Ubuntu), UNIX, Windows</p>
                     </div>
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-wrench"></i><p class="font-semibold">Developer Tools</p></div>
+                    <p class="text-sm text-slate-700">Git, VS Code</p>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="mb-10 sm:mb-12 md:mb-16">
-            <div class="bg-white rounded-xl shadow-md p-5 sm:p-6 md:p-8">
-                <h2 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 sm:mb-5 md:mb-6 flex items-center">
-                    <i class="fas fa-cogs mr-3 text-secondary"></i>
-                    Technical Skills
-                </h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 md:gap-8 print-grid">
-                    <!-- Operating Systems & Scripting -->
-                    <div class="print-break-inside-avoid">
-                        <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4">Operating Systems & Scripting</h3>
-                        <div class="space-y-3 sm:space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Linux</span>
-                                    <span>Proficient</span>
+        <section id="projects" class="mb-12">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl md:text-3xl font-bold">Projects</h2>
                                 </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 85%"></div>
+            <div class="mt-6 grid md:grid-cols-2 gap-6">
+                <article class="card rounded-xl border border-slate-200 bg-white p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <h3 class="text-lg font-semibold">AWS 3-Tier Highly Available Web Application</h3>
+                        <span class="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary whitespace-nowrap">Feb 2025 – Present</span>
                                 </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">File systems, services, permissions, process management</p>
+                    <p class="mt-2 text-sm text-slate-700">Architected and deployed a fault-tolerant, scalable 3-tier web application for a mock e-commerce platform on AWS to handle high-traffic loads.</p>
+                    <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
+                        <li>Automated infrastructure provisioning using Terraform, cutting setup time by 95%.</li>
+                        <li>Containerized components with Docker and implemented CI/CD via GitHub Actions.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 rounded bg-slate-100">AWS (EC2, ELB, RDS, S3)</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Terraform</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Docker</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">GitHub Actions</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Python (Flask)</span>
                             </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Bash</span>
-                                    <span>Intermediate</span>
+                </article>
+
+                <article class="card rounded-xl border border-slate-200 bg-white p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <h3 class="text-lg font-semibold">Linux System Administration & Backup Automation</h3>
+                        <span class="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary whitespace-nowrap">Dec 2024 – Feb 2025</span>
                                 </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 70%"></div>
+                    <ul class="mt-2 text-sm text-slate-700 list-disc pl-5 space-y-1">
+                        <li>Automated user lifecycle management with Bash, reducing overhead by 70%.</li>
+                        <li>Implemented scheduled backups using cron and rsync with point-in-time recovery.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 rounded bg-slate-100">Bash</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Linux (Ubuntu)</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Cron</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Rsync</span>
                                 </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Scripting for automation and system tasks</p>
+                </article>
+
+                <article class="card rounded-xl border border-slate-200 bg-white p-6 md:col-span-2">
+                    <div class="flex items-start justify-between gap-4">
+                        <h3 class="text-lg font-semibold">Scalable Real-Time Financial Data Platform on AWS</h3>
+                        <span class="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary whitespace-nowrap">June 2025 – Present</span>
+                                </div>
+                    <ul class="mt-2 text-sm text-slate-700 list-disc pl-5 space-y-1">
+                        <li>Built data ingestion on Amazon Kinesis streaming 1,000+ crypto trades/min from WebSocket APIs, processed by AWS Lambda (Python).</li>
+                        <li>Stored structured time-series in Amazon RDS (MySQL) and unstructured events in Amazon DocumentDB for analytics.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 rounded bg-slate-100">AWS (Kinesis, Lambda, RDS, DocumentDB)</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Terraform</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Python</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">MySQL</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">MongoDB API</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">WebSockets</span>
+                                </div>
+                </article>
                             </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Python</span>
-                                    <span>Intermediate</span>
+        </section>
+
+        <section id="education" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold">Education</h2>
+            <div class="mt-6 grid gap-5">
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex flex-wrap items-center gap-2 text-slate-700 text-sm">
+                        <p class="font-semibold text-ink">Graphic Era University</p>
+                        <span class="hidden sm:inline">•</span>
+                        <p>Haldwani, India</p>
+                        <span class="hidden sm:inline">•</span>
+                        <p>Graduation: 2026</p>
                                 </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 65%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Scripting for tooling and automation</p>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">YAML</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 75%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Configuration for Ansible, Docker Compose, and Kubernetes</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Cloud & Virtualization -->
-                    <div class="print-break-inside-avoid">
-                        <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4">Cloud & Virtualization</h3>
-                        <div class="space-y-3 sm:space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Amazon Web Services (AWS)</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 70%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">EC2, S3, IAM, CLI, basic cloud infrastructure setup</p>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">VirtualBox, VMware, Vagrant</span>
-                                    <span>Proficient</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 80%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Local development and VM provisioning</p>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4 mt-6 sm:mt-7 md:mt-8">Containers & Orchestration</h3>
-                        <div class="space-y-3 sm:space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Docker</span>
-                                    <span>Proficient</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 80%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Image creation, Dockerfiles, Docker Compose, Docker Swarm</p>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Kubernetes</span>
-                                    <span>Basic</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 50%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Pods, services, deployments, configs</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- CI/CD & Automation -->
-                    <div class="print-break-inside-avoid">
-                        <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4">CI/CD & Automation</h3>
-                        <div class="space-y-3 sm:space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Jenkins</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 75%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Declarative pipeline creation, GitHub integration, automated testing</p>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Ansible</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 70%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Playbooks, inventory, configuration management</p>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Terraform & OpenTofu</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 65%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Infrastructure as Code for cloud provisioning</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Monitoring & Other Skills -->
-                    <div class="print-break-inside-avoid">
-                        <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4">Monitoring & Observability</h3>
-                        <div class="space-y-3 sm:space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Prometheus</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 65%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Metrics collection and alerting</p>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Grafana</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 60%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Dashboarding and visualization</p>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">SonarQube</span>
-                                    <span>Basic</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 50%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Code quality and security scanning</p>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4 mt-6 sm:mt-7 md:mt-8">Version Control & Build Tools</h3>
-                        <div class="space-y-3 sm:space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Git, GitHub</span>
-                                    <span>Proficient</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 85%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Version control, branching strategy, CI integration</p>
-                            </div>
-                            
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="font-medium">Maven, npm, Vite</span>
-                                    <span>Intermediate</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 60%"></div>
-                                </div>
-                                <p class="text-xs sm:text-sm text-gray-600 mt-1">Dependency and build management</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Additional Skills -->
-                <div class="mt-8 sm:mt-9 md:mt-10 print-break-inside-avoid">
-                    <h3 class="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4">Additional Skills</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag bg-blue-100 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">HTML</span>
-                        <span class="skill-tag bg-blue-100 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">CSS</span>
-                        <span class="skill-tag bg-blue-100 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">JavaScript</span>
-                        <span class="skill-tag bg-blue-100 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Node.js</span>
-                        <span class="skill-tag bg-blue-100 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Apache Tomcat</span>
-                        <span class="skill-tag bg-blue-100 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">WordPress Deployment</span>
-                        <span class="skill-tag bg-blue-100 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">MongoDB (Basic)</span>
-                        <span class="skill-tag bg-blue-100 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">SQL</span>
-                    </div>
+                    <p class="mt-1">Bachelor of Technology in Computer Science</p>
+                    <p class="mt-3 text-sm text-slate-700"><span class="font-medium">Relevant Coursework:</span> Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks, Distributed Systems, Database Management Systems</p>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="mb-10 sm:mb-12 md:mb-16">
-            <div class="bg-white rounded-xl shadow-md p-5 sm:p-6 md:p-8">
-                <h2 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 sm:mb-5 md:mb-6 flex items-center">
-                    <i class="fas fa-briefcase mr-3 text-secondary"></i>
-                    Professional Experience
-                </h2>
-                
-                <div class="timeline-item pb-6 sm:pb-7 md:pb-8 print-break-inside-avoid">
-                    <div class="mb-2">
-                        <h3 class="text-lg sm:text-xl font-semibold">IT Support Engineer</h3>
-                        <div class="flex flex-wrap items-center text-gray-600 text-sm sm:text-base">
-                            <span class="font-medium text-secondary">Elante Pvt. Ltd.</span>
-                            <span class="mx-2">|</span>
-                            <span>2023 – 2025</span>
+        <section id="experience" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold">Experience</h2>
+            <div class="mt-6 grid gap-5">
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-start justify-between gap-4">
+                        <h3 class="text-lg font-semibold">Trading Experience (Forex, Crypto, and Options)</h3>
+                        <span class="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary whitespace-nowrap">Jan 2022 – Present</span>
                         </div>
-                    </div>
-                    <ul class="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base">
-                        <li>Handled day-to-day IT support and infrastructure troubleshooting</li>
-                        <li>Configured new systems and ensured secure software and network setups</li>
-                        <li>Managed backups and basic system security</li>
-                    </ul>
-                </div>
-                
-                <h2 class="text-xl sm:text-2xl font-bold text-primary mb-4 sm:mb-5 md:mb-6 mt-6 sm:mt-7 md:mt-8 flex items-center">
-                    <i class="fas fa-certificate mr-3 text-secondary"></i>
-                    Training & Certifications
-                </h2>
-                
-                <div class="timeline-item pb-6 sm:pb-7 md:pb-8 print-break-inside-avoid">
-                    <div class="mb-2">
-                        <h3 class="text-lg sm:text-xl font-semibold">DevOps Training</h3>
-                        <div class="flex flex-wrap items-center text-gray-600 text-sm sm:text-base">
-                            <span class="font-medium text-secondary">TechAxis</span>
-                            <span class="mx-2">|</span>
-                            <span>Feb 2025 – June 2025</span>
-                        </div>
-                    </div>
-                    <ul class="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base">
-                        <li>Linux Administration, Vagrant, Bash Scripting, Virtualization</li>
-                        <li>Docker, Jenkins, Ansible, Git</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item print-break-inside-avoid">
-                    <div class="mb-2">
-                        <h3 class="text-lg sm:text-xl font-semibold">Linux Foundation Training</h3>
-                        <div class="flex flex-wrap items-center text-gray-600 text-sm sm:text-base">
-                            <span class="font-medium text-secondary">CBitss Pvt. Ltd.</span>
-                            <span class="mx-2">|</span>
-                            <span>2020</span>
-                        </div>
-                    </div>
-                    <ul class="list-disc list-inside space-y-1 sm:space-y-2 text-gray-700 ml-2 sm:ml-4 text-sm sm:text-base">
-                        <li>Linux basic commands</li>
-                        <li>User and permission management</li>
+                    <ul class="mt-2 text-sm text-slate-700 list-disc pl-5 space-y-1">
+                        <li>Hands-on analysis of market trends, risk management, and trade execution.</li>
+                        <li>Practical understanding of equities, commodities, derivatives, and digital assets.</li>
+                        <li>Applied technical and fundamental analysis for informed decisions; domain knowledge relevant to fintech systems.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education" class="mb-10 sm:mb-12 md:mb-16">
-            <div class="bg-white rounded-xl shadow-md p-5 sm:p-6 md:p-8">
-                <h2 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 sm:mb-5 md:mb-6 flex items-center">
-                    <i class="fas fa-graduation-cap mr-3 text-secondary"></i>
-                    Education
-                </h2>
-                
-                <div class="timeline-item pb-6 sm:pb-7 md:pb-8 print-break-inside-avoid">
-                    <div class="mb-2">
-                        <h3 class="text-lg sm:text-xl font-semibold">Bachelor of Technology (B.Tech) in Information Technology</h3>
-                        <div class="flex flex-wrap items-center text-gray-600 text-sm sm:text-base">
-                            <span class="font-medium text-secondary">Punjab Technical University</span>
-                            <span class="mx-2">|</span>
-                            <span>Punjab, India</span>
-                            <span class="mx-2">|</span>
-                            <span>2022</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item print-break-inside-avoid">
-                    <div class="mb-2">
-                        <h3 class="text-lg sm:text-xl font-semibold">High School</h3>
-                        <div class="flex flex-wrap items-center text-gray-600 text-sm sm:text-base">
-                            <span class="font-medium text-secondary">St. Thomas College</span>
-                            <span class="mx-2">|</span>
-                            <span>Nepalgunj, Nepal</span>
-                            <span class="mx-2">|</span>
-                            <span>2017</span>
-                        </div>
-                    </div>
-                </div>
+        <section id="interests" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold">Interests</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-sm">Cloud Infrastructure (AWS)</span>
+                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-sm">Automation & DevOps</span>
+                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-sm">Financial Trading (Forex, Crypto, Derivatives)</span>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="mb-10 sm:mb-12 md:mb-16">
-            <div class="bg-white rounded-xl shadow-md p-5 sm:p-6 md:p-8">
-                <h2 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 sm:mb-5 md:mb-6 flex items-center">
-                    <i class="fas fa-project-diagram mr-3 text-secondary"></i>
-                    Projects
-                </h2>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 print-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-4 sm:p-5 md:p-6 shadow-sm print-break-inside-avoid">
-                        <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">End-to-End CI/CD Deployment of a Django Note-Taking App</h3>
-                        <p class="text-gray-700 mb-3 sm:mb-4 text-sm sm:text-base">Automated deployment pipeline with Docker, Jenkins, GitHub Webhooks, and email notifications.</p>
-                        
-                        <div class="mb-3 sm:mb-4">
-                            <h4 class="font-medium text-secondary mb-1 sm:mb-2 text-sm sm:text-base">Key Features:</h4>
-                            <ul class="list-disc list-inside space-y-1 text-gray-700 ml-1 sm:ml-2 text-xs sm:text-sm">
-                                <li>Stored Docker images on DockerHub and pulled them during deployment</li>
-                                <li>Configured a Jenkins agent node to run, build, and deploy jobs</li>
-                                <li>Set up email notifications to report job statuses, build success/failure</li>
-                                <li>Final deployment executed on a Linux EC2 instance</li>
-                            </ul>
-                        </div>
-                        
+        <section id="contact" class="mb-4">
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
                         <div>
-                            <h4 class="font-medium text-secondary mb-1 sm:mb-2 text-sm sm:text-base">Technologies Used:</h4>
-                            <div class="flex flex-wrap gap-1 sm:gap-2">
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Python (Django)</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">MySQL</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">NGINX</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Git</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">GitHub</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Jenkins</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Docker</span>
+                        <h2 class="text-xl md:text-2xl font-bold">Let’s connect</h2>
+                        <p class="mt-1 text-slate-700">Open to internships and projects in Cloud, DevOps, and Fintech.</p>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="project-card bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-4 sm:p-5 md:p-6 shadow-sm print-break-inside-avoid">
-                        <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">WordPress Hosting & Apache Stack Configuration</h3>
-                        <p class="text-gray-700 mb-3 sm:mb-4 text-sm sm:text-base">Provisioned and hosted a WordPress site using a LAMP stack on a Linux VM.</p>
-                        
-                        <div class="mb-3 sm:mb-4">
-                            <h4 class="font-medium text-secondary mb-1 sm:mb-2 text-sm sm:text-base">Key Features:</h4>
-                            <ul class="list-disc list-inside space-y-1 text-gray-700 ml-1 sm:ml-2 text-xs sm:text-sm">
-                                <li>Installed and configured Apache, MySQL, and WordPress manually and through Ansible</li>
-                                <li>Secured MySQL with custom users and configured Apache virtual hosts for WordPress</li>
-                                <li>Monitored server performance using Prometheus and visualized data in Grafana</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-medium text-secondary mb-1 sm:mb-2 text-sm sm:text-base">Technologies Used:</h4>
-                            <div class="flex flex-wrap gap-1 sm:gap-2">
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">WordPress</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Apache</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">MySQL</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Ansible</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Prometheus</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Grafana</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Linux</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="project-card bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-4 sm:p-5 md:p-6 shadow-sm print-break-inside-avoid lg:col-span-2 xl:col-span-1">
-                        <h3 class="text-lg sm:text-xl font-semibold text-primary mb-2 sm:mb-3">Virtual Environment Automation with Vagrant</h3>
-                        <p class="text-gray-700 mb-3 sm:mb-4 text-sm sm:text-base">Test environment setup for DevOps practice and network simulation.</p>
-                        
-                        <div class="mb-3 sm:mb-4">
-                            <h4 class="font-medium text-secondary mb-1 sm:mb-2 text-sm sm:text-base">Key Features:</h4>
-                            <ul class="list-disc list-inside space-y-1 text-gray-700 ml-1 sm:ml-2 text-xs sm:text-sm">
-                                <li>Created isolated test environments using Vagrant, VirtualBox, and VMware</li>
-                                <li>Automated VM provisioning and configuration</li>
-                                <li>Implemented network simulation for testing distributed systems</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-medium text-secondary mb-1 sm:mb-2 text-sm sm:text-base">Technologies Used:</h4>
-                            <div class="flex flex-wrap gap-1 sm:gap-2">
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Vagrant</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">VirtualBox</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">VMware</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Bash</span>
-                                <span class="bg-blue-100 text-primary px-2 py-0.5 sm:py-1 rounded text-xs font-medium">Linux</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section - will be hidden in print -->
-        <section id="contact" class="mb-10 sm:mb-12 md:mb-16 no-print contact-section">
-            <div class="bg-white rounded-xl shadow-md p-5 sm:p-6 md:p-8">
-                <h2 class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 sm:mb-5 md:mb-6 flex items-center">
-                    <i class="fas fa-envelope mr-3 text-secondary"></i>
-                    Contact Me
-                </h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 md:gap-8">
-                    <div>
-                        <p class="text-base sm:text-lg mb-5 sm:mb-6">Feel free to reach out to me for any opportunities or questions. I'm currently looking for a Junior DevOps role and would love to discuss how I can contribute to your team.</p>
-                        
-                        <div class="space-y-3 sm:space-y-4">
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 flex items-center justify-center mr-3 sm:mr-4">
-                                    <i class="fas fa-envelope text-secondary text-lg sm:text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-medium text-sm sm:text-base">Email</h3>
-                                    <a href="mailto:nareshbc5555@gmail.com" class="text-secondary hover:underline text-sm sm:text-base">nareshbc5555@gmail.com</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 flex items-center justify-center mr-3 sm:mr-4">
-                                    <i class="fab fa-linkedin text-secondary text-lg sm:text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-medium text-sm sm:text-base">LinkedIn</h3>
-                                    <a href="https://www.linkedin.com/in/naresh-budhathoki-a079301b3/" target="_blank" class="text-secondary hover:underline text-sm sm:text-base truncate block max-w-[200px] sm:max-w-xs">linkedin.com/in/naresh-budhathoki-a079301b3</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 flex items-center justify-center mr-3 sm:mr-4">
-                                    <i class="fab fa-github text-secondary text-lg sm:text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-medium text-sm sm:text-base">GitHub</h3>
-                                    <a href="https://github.com/nareshbudhathoki" target="_blank" class="text-secondary hover:underline text-sm sm:text-base">github.com/nareshbudhathoki</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-blue-50 rounded-xl p-4 sm:p-5 md:p-6 border border-blue-100">
-                        <h3 class="text-lg sm:text-xl font-semibold text-primary mb-3 sm:mb-4">Send Me a Message</h3>
-                        <form id="contact-form" class="space-y-3 sm:space-y-4">
-                            <div>
-                                <label for="name" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Name</label>
-                                <input type="text" id="name" name="name" class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-secondary text-sm" required>
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Email</label>
-                                <input type="email" id="email" name="email" class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-secondary text-sm" required>
-                            </div>
-                            
-                            <div>
-                                <label for="subject" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Subject</label>
-                                <input type="text" id="subject" name="subject" class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-secondary text-sm" required>
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Message</label>
-                                <textarea id="message" name="message" rows="4" class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondary focus:border-secondary text-sm" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-secondary text-white font-medium py-2 px-4 sm:px-6 rounded-md hover:bg-primary transition duration-300 flex items-center justify-center text-sm sm:text-base">
-                                <i class="fas fa-paper-plane mr-2"></i> Send Message
-                            </button>
-                        </form>
-                        <div id="form-message" class="mt-4 text-center hidden"></div>
+                    <div class="flex flex-wrap gap-3 text-sm">
+                        <a href="mailto:mayanksinghdhami7@gmail.com" class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-md"><i class="fa-solid fa-envelope"></i> Email</a>
+                        <a href="tel:+919012176321" class="inline-flex items-center gap-2 bg-slate-100 text-ink px-4 py-2 rounded-md"><i class="fa-solid fa-phone"></i> Call</a>
+                        <a href="https://www.linkedin.com/in/mayanksdhami/" target="_blank" class="inline-flex items-center gap-2 bg-slate-100 text-ink px-4 py-2 rounded-md"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/MayankSingh04" target="_blank" class="inline-flex items-center gap-2 bg-slate-100 text-ink px-4 py-2 rounded-md"><i class="fa-brands fa-github"></i> GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer - will be hidden in print -->
-    <footer class="bg-primary text-white py-6 sm:py-8 no-print">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-5 md:mb-0 text-center md:text-left">
-                    <h2 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Naresh Budhathoki</h2>
-                    <p class="text-blue-200 text-sm sm:text-base">DevOps Engineer</p>
-                </div>
-                
-                <div class="flex space-x-3 sm:space-x-4">
-                    <a href="mailto:nareshbc5555@gmail.com" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                        <i class="fas fa-envelope text-sm sm:text-base"></i>
-                    </a>
-                    <a href="https://github.com/nareshbudhathoki" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                        <i class="fab fa-github text-sm sm:text-base"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/naresh-budhathoki-a079301b3/" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                        <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/20 mt-5 sm:mt-6 pt-5 sm:pt-6 text-center text-xs sm:text-sm text-blue-200">
-                <p>&copy; 2025 Naresh Budhathoki. All rights reserved.</p>
-            </div>
+    <footer class="py-8">
+        <div class="max-w-6xl mx-auto px-4 text-sm text-slate-600 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <p>&copy; 2025 Mayank Singh Dhami</p>
+            <button id="back-to-top" class="inline-flex items-center gap-2 text-primary"><i class="fa-solid fa-arrow-up"></i> Back to top</button>
         </div>
     </footer>
 
-    <!-- Back to Top Button - will be hidden in print -->
-    <button id="back-to-top" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-secondary text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 no-print">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Scripts -->
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Adjust offset based on screen size
-                    const offset = window.innerWidth < 768 ? 60 : 80;
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - offset,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
-        });
-        
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.add('opacity-0', 'invisible');
-                backToTopButton.classList.remove('opacity-100', 'visible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Contact form handling
-        const contactForm = document.getElementById('contact-form');
-        const formMessage = document.getElementById('form-message');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Get form data
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
-                
-                // In a real application, you would send this data to a server
-                // For demo purposes, we'll just show a success message
-                formMessage.innerHTML = `<div class="p-3 sm:p-4 bg-green-100 text-green-800 rounded-md text-xs sm:text-sm">Thank you, ${name}! Your message has been sent. This is a demo form.</div>`;
-                formMessage.classList.remove('hidden');
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.classList.add('hidden');
-                }, 5000);
-            });
-        }
-        
-        // Download resume functionality - completely revised for better PDF output
-        document.getElementById('download-resume').addEventListener('click', () => {
-            // Create a special style element for print that will completely hide unwanted elements
-            const printStyle = document.createElement('style');
-            printStyle.id = 'print-style-override';
-            printStyle.innerHTML = `
-                @media print {
-                    @page {
-                        size: A4 portrait;
-                        margin: 0.5cm;
-                    }
-                    
-                    html, body {
-                        width: 100%;
-                        height: 100%;
-                        margin: 0;
-                        padding: 0;
-                        background-color: white !important;
-                        color: black !important;
-                        font-size: 10pt;
-                    }
-                    
-                    /* Hide all non-printable elements */
-                    nav, footer, .no-print, #back-to-top, #contact, #mobile-menu, #menu-toggle, 
-                    #download-resume, form, button, .contact-section, #contact-form {
-                        display: none !important;
-                        height: 0 !important;
-                        width: 0 !important;
-                        overflow: hidden !important;
-                        position: absolute !important;
-                        left: -9999px !important;
-                    }
-                    
-                    /* Reset all backgrounds and borders */
-                    .container, main, section, div {
-                        width: 100% !important;
-                        max-width: 100% !important;
-                        padding: 0 !important;
-                        margin: 0 !important;
-                        background: white !important;
-                        box-shadow: none !important;
-                        border: none !important;
-                        border-radius: 0 !important;
-                    }
-                    
-                    /* Header styling */
-                    header {
-                        background: white !important;
-                        color: black !important;
-                        padding: 0 !important;
-                        margin-bottom: 0.8cm !important;
-                    }
-                    
-                    /* Section spacing */
-                    section {
-                        margin-bottom: 0.8cm !important;
-                        page-break-inside: avoid;
-                    }
-                    
-                    /* Force page breaks */
-                    #skills {
-                        page-break-before: always;
-                    }
-                    
-                    #projects {
-                        page-break-before: always;
-                    }
-                    
-                    /* Ensure proper spacing */
-                    h2 {
-                        margin-top: 0.5cm !important;
-                        padding-bottom: 0.2cm !important;
-                        border-bottom: 1pt solid #3b82f6 !important;
-                    }
-                    
-                    /* Make sure content is visible */
-                    .print-grid {
-                        display: grid !important;
-                        grid-template-columns: 1fr 1fr !important;
-                        gap: 0.5cm !important;
-                    }
-                    
-                    /* Ensure project cards print well */
-                    .project-card {
-                        border: 1pt solid #ccc !important;
-                        padding: 0.3cm !important;
-                        margin-bottom: 0.3cm !important;
-                        background: white !important;
-                    }
-                }
-            `;
-            document.head.appendChild(printStyle);
-            
-            // Print the document
-            window.print();
-            
-            // Remove the print-specific styles after printing
-            setTimeout(() => {
-                const styleToRemove = document.getElementById('print-style-override');
-                if (styleToRemove) {
-                    styleToRemove.remove();
-                }
-            }, 1000);
-        });
-        
-        // Add animation to skill bars on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressFill = entry.target;
-                    const width = progressFill.style.width;
-                    progressFill.style.width = '0';
-                    setTimeout(() => {
-                        progressFill.style.width = width;
-                    }, 100);
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.progress-fill').forEach(bar => {
-            observer.observe(bar);
-        });
+        const menuBtn=document.getElementById('menuBtn');
+        const mobileMenu=document.getElementById('mobileMenu');
+        const menu=document.getElementById('menu');
+        menuBtn&&menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('hidden')});
+        document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{mobileMenu&&mobileMenu.classList.add('hidden')}));
+        document.getElementById('back-to-top')?.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9644e958274cfba2',t:'MTc1MzM3NTc3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
+
