@@ -1,1 +1,1 @@
-# This is my personel website
+# This is my portfolio website
