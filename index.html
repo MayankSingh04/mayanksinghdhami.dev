@@ -3,22 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSD – Redirecting…</title>
-    <meta http-equiv="refresh" content="0; url=./resume.html">
-    <link rel="canonical" href="./resume.html">
-    <style>
-        html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-        .center { min-height: 100%; display: grid; place-items: center; text-align: center; padding: 24px; }
-        a { color: #2563eb; text-decoration: none; }
-    </style>
+    <title>Mayank Singh Dhami - CS Student & Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script>
-        window.location.replace('./resume.html');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#22d3ee',
+                        ink: '#0f172a',
+                        mist: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='24' fill='%232563eb'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter, sans-serif' font-size='64' fill='white'%3EMSD%3C/text%3E%3C/svg%3E">
+    <style>
+        body{font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';}
+        .glass{background: rgba(255,255,255,0.7);backdrop-filter: blur(8px);} 
+        .card{transition: transform .2s ease, box-shadow .2s ease}
+        .card:hover{transform: translateY(-3px); box-shadow: 0 12px 30px -12px rgba(0,0,0,.2)}
+        @media print{nav, #cta, #contact, #back-to-top, .no-print{display:none !important}; body{color:#000} a{color:#000; text-decoration:none}}
+    </style>
 </head>
-<body>
-    <div class="center">
-        <p>Redirecting to your resume… If you are not redirected, <a href="./resume.html">click here</a>.</p>
-    </div>
+<body class="bg-mist text-ink">
+    <nav class="sticky top-0 z-50 glass border-b border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="font-semibold text-primary">MSD</a>
+            <button id="menuBtn" class="md:hidden text-ink/70" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+            <div id="menu" class="hidden md:flex items-center gap-6 text-sm">
+                <a href="#about" class="hover:text-primary">About</a>
+                <a href="#skills" class="hover:text-primary">Skills</a>
+                <a href="#projects" class="hover:text-primary">Projects</a>
+                <a href="#education" class="hover:text-primary">Education</a>
+                <a href="#experience" class="hover:text-primary">Experience</a>
+                <a href="#contact" class="hover:text-primary">Contact</a>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden px-4 pb-3 text-sm">
+            <a href="#about" class="block py-2">About</a>
+            <a href="#skills" class="block py-2">Skills</a>
+            <a href="#projects" class="block py-2">Projects</a>
+            <a href="#education" class="block py-2">Education</a>
+            <a href="#experience" class="block py-2">Experience</a>
+            <a href="#contact" class="block py-2">Contact</a>
+        </div>
+    </nav>
+
+    <header id="about" class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-transparent"></div>
+        <div class="max-w-6xl mx-auto px-4 py-12 md:py-16 relative">
+            <div class="grid md:grid-cols-5 gap-8 items-center">
+                <div class="md:col-span-3">
+                    <h1 class="text-3xl md:text-5xl font-bold tracking-tight">Mayank Singh Dhami</h1>
+                    <p class="mt-3 text-lg text-slate-600">Computer Science Student • Developer</p>
+                    <p class="mt-4 text-slate-700 max-w-2xl">CS student in my 8th semester. I build web applications, work with cloud infrastructure, and write code in <strong class="font-medium text-ink">Python, Java, and other languages</strong>. Open to all kinds of opportunities - internships, projects, or full-time roles in software development, cloud, or related fields.</p>
+                    <div class="mt-6 flex flex-wrap gap-4 items-center">
+<a href="MayankSDhami_BTECH.pdf" download="Mayank_Singh_Dhami_Resume.pdf" class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 font-semibold no-print">
+    <i class="fa-solid fa-download"></i> Download Resume
+</a>                        <div class="flex flex-wrap gap-3 text-sm">
+                            <a href="tel:+919012176321" class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-md hover:border-primary/50"><i class="fa-solid fa-phone text-primary"></i> 9012176321</a>
+                            <a href="mailto:mayanksinghdhami7@gmail.com" class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-md hover:border-primary/50"><i class="fa-solid fa-envelope text-primary"></i> mayanksinghdhami7@gmail.com</a>
+                            <a href="https://www.linkedin.com/in/mayanksdhami/" target="_blank" class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-md hover:border-primary/50"><i class="fa-brands fa-linkedin text-primary"></i> LinkedIn</a>
+                            <a href="https://github.com/MayankSingh04" target="_blank" class="inline-flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-md hover:border-primary/50"><i class="fa-brands fa-github text-primary"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="card rounded-2xl border border-slate-200 bg-white p-5">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 grid place-content-center rounded-xl bg-primary/10 text-primary text-2xl"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <p class="text-sm text-slate-500">Location</p>
+                                    <p class="font-medium">Haldwani, India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 grid place-content-center rounded-xl bg-green-500/10 text-green-600 text-2xl"><i class="fa-solid fa-briefcase"></i></div>
+                                <div>
+                                    <p class="text-sm text-slate-500">Availability</p>
+                                    <p class="font-medium">Available Immediately</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+        <section id="skills" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold">Technical <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Skills</span></h2>
+            <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-code"></i><p class="font-semibold">Languages</p></div>
+                    <p class="text-sm text-slate-700">Python, Java, C, SQL, Bash</p>
+                </div>
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-cloud"></i><p class="font-semibold">Cloud & DevOps</p></div>
+                    <p class="text-sm text-slate-700">AWS (EC2, S3, Lambda, API Gateway, VPC), Terraform, Kubernetes, Docker</p>
+                    </div>
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-computer"></i><p class="font-semibold">Operating Systems</p></div>
+                    <p class="text-sm text-slate-700">Linux (Ubuntu), UNIX, Windows</p>
+                    </div>
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-database"></i><p class="font-semibold">Databases</p></div>
+                    <p class="text-sm text-slate-700">MySQL, PostgreSQL, MongoDB</p>
+                </div>
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-brush"></i><p class="font-semibold">Frontend Development</p></div>
+                    <p class="text-sm text-slate-700">HTML, CSS, JavaScript, React, Tailwind CSS</p>
+                </div>
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-center gap-3 mb-3 text-primary"><i class="fa-solid fa-tools"></i><p class="font-semibold">Development Tools</p></div>
+                    <p class="text-sm text-slate-700">Using modern tools to speed up development and focus on core infrastructure work</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-12">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl md:text-3xl font-bold">Projects</h2>
+            </div>
+            <div class="mt-6 grid md:grid-cols-2 gap-6">
+                
+                <article class="card rounded-xl border border-slate-200 bg-white p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <h3 class="text-lg font-semibold">Cloud Auditor - AWS Security & Cost Watchdog</h3>
+                        <a href="https://github.com/MayankSingh04/cloud-auditor" target="_blank" class="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary whitespace-nowrap hover:bg-primary/20">View on GitHub</a>
+                    </div>
+                    <p class="mt-2 text-sm text-slate-700">A serverless tool I built on AWS that checks your cloud setup for security issues and weird cost spikes.</p>
+                    <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
+                        <li>Deployed everything using Terraform for infrastructure as code.</li>
+                        <li>Built a serverless backend with AWS Lambda (Python), API Gateway, and DynamoDB.</li>
+                        <li>Made a React dashboard to visualize the findings.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 rounded bg-slate-100">Terraform</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">AWS Lambda</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">DynamoDB</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">API Gateway</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">React</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Python</span>
+                    </div>
+                </article>
+
+                <article class="card rounded-xl border border-slate-200 bg-white p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <h3 class="text-lg font-semibold">Scalable Real-Time Financial Data Platform</h3>
+                        <span class="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary whitespace-nowrap">June 2025 – Present</span>
+                    </div>
+                     <p class="mt-2 text-sm text-slate-700">A Docker-based pipeline that streams crypto trades from Binance and filters for large whale trades. Built with Python, deployed on AWS.</p>
+                    <ul class="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
+                        <li>Streams real-time trades from Binance WebSocket API using Kinesis.</li>
+                        <li>Processes and stores data in RDS. All infrastructure defined in Terraform.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                        <span class="px-2 py-1 rounded bg-slate-100">AWS (Kinesis, Lambda, RDS)</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Terraform</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">Python</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">MySQL</span>
+                        <span class="px-2 py-1 rounded bg-slate-100">WebSockets</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="education" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold">Education</h2>
+            <div class="mt-6 grid gap-5">
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex flex-wrap items-center gap-2 text-slate-700 text-sm">
+                        <p class="font-semibold text-ink">Graphic Era University</p>
+                        <span class="hidden sm:inline">•</span>
+                        <p>Haldwani, India</p>
+                        <span class="hidden sm:inline">•</span>
+                        <p>Graduation: 2026</p>
+                    </div>
+                    <p class="mt-1">Bachelor of Technology in Computer Science</p>
+                    <p class="mt-3 text-sm text-slate-700"><span class="font-medium">Relevant Coursework:</span> Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks, Distributed Systems, Database Management Systems</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold">Trading Experience</h2>
+            <div class="mt-6 grid gap-5">
+                <div class="card rounded-xl border border-slate-200 bg-white p-5">
+                    <div class="flex items-start justify-between gap-4">
+                        <h3 class="text-lg font-semibold">Trading Experience (Forex, Crypto, and Options)</h3>
+                        <span class="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary whitespace-nowrap">Jan 2022 – Present</span>
+                        </div>
+                    <ul class="mt-2 text-sm text-slate-700 list-disc pl-5 space-y-1">
+                        <li>Trading forex, crypto, and options. Learning to read markets and manage risk.</li>
+                        <li>Understanding how financial markets work and applying that to technical solutions.</li>
+                        <li>Using technical and fundamental analysis to make trading decisions.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold">Interests</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-sm">Web Development</span>
+                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-sm">Cloud Infrastructure</span>
+                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-sm">Financial Trading (Forex, Crypto, Derivatives)</span>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-4">
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+                        <div>
+                        <h2 class="text-xl md:text-2xl font-bold">Let's connect</h2>
+                        <p class="mt-1 text-slate-700">CS student in 8th semester, open to all opportunities. Looking for internships, projects, or full-time roles in software development, cloud, web development, or any interesting technical work.</p>
+                        </div>
+                    <div class="flex flex-wrap gap-3 text-sm">
+                        <a href="mailto:mayanksinghdhami7@gmail.com" class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-md"><i class="fa-solid fa-envelope"></i> Email</a>
+                        <a href="tel:+919012176321" class="inline-flex items-center gap-2 bg-slate-100 text-ink px-4 py-2 rounded-md"><i class="fa-solid fa-phone"></i> Call</a>
+                        <a href="https://www.linkedin.com/in/mayanksdhami/" target="_blank" class="inline-flex items-center gap-2 bg-slate-100 text-ink px-4 py-2 rounded-md"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/MayankSingh04" target="_blank" class="inline-flex items-center gap-2 bg-slate-100 text-ink px-4 py-2 rounded-md"><i class="fa-brands fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8">
+        <div class="max-w-6xl mx-auto px-4 text-sm text-slate-600 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <p>&copy; 2025 Mayank Singh Dhami</p>
+            <button id="back-to-top" class="inline-flex items-center gap-2 text-primary"><i class="fa-solid fa-arrow-up"></i> Back to top</button>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn=document.getElementById('menuBtn');
+        const mobileMenu=document.getElementById('mobileMenu');
+        const menu=document.getElementById('menu');
+        menuBtn&&menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('hidden')});
+        document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{mobileMenu&&mobileMenu.classList.add('hidden')}));
+        document.getElementById('back-to-top')?.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
+    </script>
 </body>
 </html>
-
